@@ -39,6 +39,11 @@ impl Response {
         res.body = contents;
         res
     }
+    pub fn send(text: &str) -> Response {
+        let mut res = Response::default();
+        res.body = text.as_bytes().to_vec();
+        res
+    }
     pub fn download(path: &str) {}
 }
 impl Default for Response {
